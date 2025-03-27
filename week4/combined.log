@@ -1,0 +1,33 @@
+{"level":"info","message":"Parameters 5 and 10 received for addition","service":"add-service"}
+{"level":"info","message":"Parameters 5 and 15 received for addition","service":"add-service"}
+{"level":"error","message":"n1 is incorrectly defined","service":"add-service"}
+{"level":"info","message":"Parameters 5 and 15 received for addition","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"add-service"}
+{"level":"info","message":"Parameters 5 and 15 received for addition","service":"add-service"}
+{"level":"info","message":"Parameters 20 and 15 received for addition","service":"add-service"}
+{"level":"info","message":"Subtraction result: 5","service":"add-service"}
+{"level":"info","message":"Parameters 2 and 5 received for addition","service":"add-service"}
+{"level":"info","message":"Multiplication result: 10","service":"add-service"}
+{"level":"info","message":"Parameters 20 and 5 received for addition","service":"add-service"}
+{"level":"info","message":"Division result: 4","service":"add-service"}
+{"level":"info","message":"Server listening on port 3000","service":"calculator-service"}
+{"level":"info","message":"Parameters 20 and 5 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Division result: 4","service":"calculator-service"}
+{"level":"info","message":"Parameters 2 and 4 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Exponentiation result: 16","service":"calculator-service"}
+{"level":"info","message":"Parameters 2 and 2 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Square root result: 1.4142135623730951","service":"calculator-service"}
+{"level":"error","message":"n2 is incorrectly defined","service":"calculator-service"}
+{"level":"error","message":"n2 incorrectly defined","service":"calculator-service"}
+{"level":"info","message":"Parameters 2 and 2 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Square root result: 1.4142135623730951","service":"calculator-service"}
+{"level":"info","message":"Parameters 2 and 2 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Modulo result: 0","service":"calculator-service"}
+{"level":"info","message":"Parameters 20 and 2 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Modulo result: 0","service":"calculator-service"}
+{"level":"info","message":"Parameters 20 and 3 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Modulo result: 2","service":"calculator-service"}

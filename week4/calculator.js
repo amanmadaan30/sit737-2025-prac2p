@@ -5,7 +5,7 @@ const winston = require('winston');
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
-    defaultMeta: { service: 'add-service' },
+    defaultMeta: { service: 'calculator-service' },
     transports: [
         //
         // - Write all logs with importance level of `error` or less to `error.log`
@@ -36,6 +36,14 @@ const divide = (n1, n2) => {
     }
     return n1 / n2;
 };
+const exponentiate = (n1, n2) => Math.pow(n1, n2);
+const sqrt = (n1) => {
+    if (n1 < 0) {
+        throw new Error("Square root of a negative number is not allowed");
+    }
+    return Math.sqrt(n1);
+};
+const modulo = (n1, n2) => n1 % n2;
 
 // validate inputs if correct numeric value is input for calculation
 const validateInputs = (req) => {
@@ -54,7 +62,7 @@ const validateInputs = (req) => {
         console.log()
         throw new Error("Parsing Error");
     }
-    logger.info('Parameters ' + n1 + ' and ' + n2 + ' received for addition');
+    logger.info('Parameters ' + n1 + ' and ' + n2 + ' received for calculation');
 
     return { n1, n2 };
 }
@@ -108,6 +116,45 @@ app.get("/divide", (req, res) => {
         res.status(500).json({ statuscode: 500, msg: error.message });
     }
 });
+// exponentiate end point
+app.get("/exponentiate", (req, res) => {
+    try {
+        const { n1, n2 } = validateInputs(req);
+        const result = exponentiate(n1, n2);
+        logger.info(`Exponentiation result: ${result}`);
+        res.status(200).json({ statuscode: 200, data: result });
+    } catch (error) {
+        logger.error(error.message);
+        res.status(500).json({ statuscode: 500, msg: error.message });
+    }
+});
+
+// square root end point
+app.get("/sqrt", (req, res) => {
+    try {
+        const { n1 } = validateInputs(req, true);
+        const result = sqrt(n1);
+        logger.info(`Square root result: ${result}`);
+        res.status(200).json({ statuscode: 200, data: result });
+    } catch (error) {
+        logger.error(error.message);
+        res.status(500).json({ statuscode: 500, msg: error.message });
+    }
+});
+
+// modulus end point
+app.get("/modulo", (req, res) => {
+    try {
+        const { n1, n2 } = validateInputs(req);
+        const result = modulo(n1, n2);
+        logger.info(`Modulo result: ${result}`);
+        res.status(200).json({ statuscode: 200, data: result });
+    } catch (error) {
+        logger.error(error.message);
+        res.status(500).json({ statuscode: 500, msg: error.message });
+    }
+});
+
 //define port value on which the server listens
 const port = 3000;
 app.listen(port, () => {
