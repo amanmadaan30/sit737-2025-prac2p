@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "winston": "^3.17.0"
+  },
+  "scripts": {
+    "start": "node calculator.js"
+  },
+  "name": "mycalculator",
+  "version": "1.0.0",
+  "main": "calculator.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
