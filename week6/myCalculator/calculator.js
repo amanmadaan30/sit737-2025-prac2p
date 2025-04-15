@@ -68,7 +68,7 @@ const validateInputs = (req) => {
 }
 
 app.get("/", (req, res) => {
-    res.send("Welcome to the Calculator Microservice!");
+    res.send("Welcome to the My Calculator Updated Application! - Version 2");
 });
 
 // addition end point

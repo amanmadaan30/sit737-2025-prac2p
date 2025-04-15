@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mycalc-container
-          image: amanmadaan30/mycalc_week6:latest
+          image: amanmadaan30/mycalc_week6:v2
           ports:
             - containerPort: 3000
           livenessProbe:
