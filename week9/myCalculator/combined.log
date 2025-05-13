@@ -1,0 +1,15 @@
+{"level":"error","message":"MongoDB connection error: MongoServerSelectionError: getaddrinfo ENOTFOUND mongo","service":"calculator-service"}
+{"level":"error","message":"MongoDB connection error: MongoServerSelectionError: getaddrinfo ENOTFOUND mongo","service":"calculator-service"}
+{"level":"error","message":"MongoDB connection error: MongoServerError: Authentication failed.","service":"calculator-service"}
+{"level":"info","message":"Connected to MongoDB","service":"calculator-service"}
+{"level":"info","message":"Connected to MongoDB","service":"calculator-service"}
+{"level":"info","message":"Connected to MongoDB","service":"calculator-service"}
+{"level":"info","message":"Server listening on port 3010","service":"calculator-service"}
+{"level":"info","message":"Parameters 5 and 15 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Saved calculation result to MongoDB: addition of 5 and 15 = 20","service":"calculator-service"}
+{"level":"info","message":"Parameters 10 and 15 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Saved calculation result to MongoDB: addition of 10 and 15 = 25","service":"calculator-service"}
+{"level":"info","message":"Parameters 10 and 15 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Saved calculation result to MongoDB: addition of 10 and 15 = 25","service":"calculator-service"}
+{"level":"info","message":"Parameters 20 and 35 received for calculation","service":"calculator-service"}
+{"level":"info","message":"Saved calculation result to MongoDB: addition of 20 and 35 = 55","service":"calculator-service"}

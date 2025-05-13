@@ -1,0 +1,26 @@
+apiVersion: batch/v1 #setup cron job to store backup of data
+kind: CronJob
+metadata:
+  name: mongodb-backup
+spec:
+  schedule: "0 2 * * *"  # every day at 2AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: mongo
+            command: ["/bin/sh", "-c"]
+            args:
+              - mongodump --host=localhost --port=27017 \
+                --username=adminuser --password=password --authenticationDatabase=admin \
+                --out=/backup/$(date +%F)
+            volumeMounts:
+            - name: backup-volume
+              mountPath: /backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: backup-volume
+            persistentVolumeClaim:
+              claimName: mongodb-backup-pvc

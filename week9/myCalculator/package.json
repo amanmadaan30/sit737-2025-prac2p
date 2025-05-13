@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0",
+    "winston": "^3.17.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "test_server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

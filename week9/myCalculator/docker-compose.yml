@@ -1,0 +1,35 @@
+version: '3'
+services:
+  test1:
+    image: mytest_server:latest
+    container_name: test1
+    ports:
+      - "3000:3000" #listens on 3000 port
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]  # Adjust according to test2's endpoint
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 10s
+    restart: always
+
+  test2:
+    image: amanmadaan30/mycalculator:latest
+    container_name: test2
+    ports:
+      - "3001:3000" #listens on 3001 port
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]  # Check if app is responding at port 3000
+      interval: 30s    # How often to check (every 30 seconds)
+      retries: 3       # How many times it should retry before considering it unhealthy
+      start_period: 10s  # Grace period for container to start
+      timeout: 10s     # Timeout for the health check
+    restart: always   # Ensure that the container restarts if unhealthy
+
+networks:
+  app-network:
+    driver: bridge

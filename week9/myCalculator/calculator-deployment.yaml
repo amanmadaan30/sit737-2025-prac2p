@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-app #name of deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      containers:
+        - name: calculator  #container name
+          image: amanmadaan30/calculator-app:latest  #image name deployed
+          ports:
+            - containerPort: 3010 #app to use this port (access app via localhost:/3010)
+          env:
+            - name: MONGO_URI
+              value: "mongodb://adminuser:password@localhost:27017/mydb?authSource=admin"  #credentials of database connection(we can view live activity in database using this connection string)

@@ -1,0 +1,3 @@
+{"level":"error","message":"MongoDB connection error: MongoServerSelectionError: getaddrinfo ENOTFOUND mongo","service":"calculator-service"}
+{"level":"error","message":"MongoDB connection error: MongoServerSelectionError: getaddrinfo ENOTFOUND mongo","service":"calculator-service"}
+{"level":"error","message":"MongoDB connection error: MongoServerError: Authentication failed.","service":"calculator-service"}

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongo:  #add mongo service to dockerized application and environment details
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=adminuser
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  app:  #build info of container to be created and connected to mongo service using mongo uri
+    build: .
+    container_name: calculator-app
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://adminuser:password@mongo:27017/mydb
+    ports:
+      - "3010:3000"
+    networks:
+      - app-network
+    command: ["node", "calculator.js"]
+
+networks:
+  app-network:
+    driver: bridge
